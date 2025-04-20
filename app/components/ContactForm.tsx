@@ -1,9 +1,12 @@
 'use client'
 
+import { useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 import send from './send.action'
 
 export default function ContactForm() {
+  const [confirmed, setConfirmed] = useState(false)
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const formData = new FormData(e.target as HTMLFormElement)
@@ -48,12 +51,22 @@ export default function ContactForm() {
       </div>
       <div>
         <div>
-          <input type="checkbox" id="agree" name="agree" />
+          <input
+            type="checkbox"
+            id="agree"
+            name="agree"
+            checked={confirmed}
+            onChange={(e) => setConfirmed(e.target.checked)}
+          />
           <label htmlFor="agree">
             我已閱讀並同意<a href="/privacy">隱私權政策</a>
           </label>
         </div>
-        <button type="submit" className="bg-indigo-900 text-white min-w-40">
+        <button
+          type="submit"
+          className="bg-indigo-900 text-white min-w-40 disabled:opacity-50"
+          disabled={!confirmed}
+        >
           送出
         </button>
       </div>

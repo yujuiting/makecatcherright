@@ -1,8 +1,30 @@
+import { readdir } from 'fs/promises'
 import Image from 'next/image'
+import path from 'path'
 import ContactForm from './components/ContactForm'
 import Section, { SectionTitle } from './components/Section'
+import Candidates from './sections/Candidates.mdx'
+import ShareholderLetter from './sections/ShareholderLetter.mdx'
 
-export default function Home() {
+interface NewsMetadata {
+  title: string
+  source: string
+  date: string
+}
+
+async function getNewsMetadata(news: string): Promise<NewsMetadata> {
+  const { metadata } = await import(`./news/${news}/page.mdx`)
+  return metadata
+}
+
+async function getNewsList() {
+  const news = await readdir(path.resolve(process.cwd(), 'app/news'))
+  return Promise.all(news.map(getNewsMetadata))
+}
+
+export default async function Home() {
+  const newsList = await getNewsList()
+
   return (
     <div className="flex flex-col container mx-auto">
       <header className="bg-blue-400">
@@ -53,18 +75,30 @@ export default function Home() {
         </div>
       </header>
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Section>
-          <SectionTitle>候選人政見</SectionTitle>
-        </Section>
+        <Candidates />
         <Section className="bg-blue-400">
           <SectionTitle>聯絡我們</SectionTitle>
           <ContactForm />
         </Section>
-        <Section>
-          <SectionTitle>致股東的信</SectionTitle>
-        </Section>
+        <ShareholderLetter />
         <Section className="bg-blue-400">
           <SectionTitle>相關新聞連結</SectionTitle>
+          <div className="flex flex-row flex-wrap text-sm">
+            {newsList.map((news) => (
+              <a
+                key={[news.date, news.source, news.title].join(':')}
+                className="block w-1/2 odd:pr-4 pb-4"
+                href={`/news/${news.date}`}
+              >
+                <span className="text-brand-yellow font-bold">
+                  {news.source}
+                </span>
+                <span className="text-white">|{news.date}</span>
+                <br />
+                <span className="text-brand-yellow">{news.title}</span>
+              </a>
+            ))}
+          </div>
         </Section>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
