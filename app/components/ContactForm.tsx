@@ -21,20 +21,23 @@ export default function ContactForm() {
   }
 
   return (
-    <form className="grid grid-cols-2 gap-4" onSubmit={handleSubmit}>
-      <div className="flex flex-row items-start">
+    <form
+      className="grid grid-cols-[auto_1fr] md:grid-cols-[auto_minmax(100px,1fr)_auto_minmax(100px,1fr)] gap-2"
+      onSubmit={handleSubmit}
+    >
+      <div className="grid grid-cols-subgrid col-span-2 items-start">
         <Label htmlFor="name">姓名</Label>
         <Input className="flex-grow" type="text" id="name" name="name" />
       </div>
-      <div className="flex flex-row items-start">
+      <div className="grid grid-cols-subgrid col-span-2 items-start">
         <Label htmlFor="phone">電話</Label>
         <Input className="flex-grow" type="string" id="phone" name="phone" />
       </div>
-      <div className="flex flex-row items-start">
-        <Label htmlFor="email">電子郵件</Label>
+      <div className="grid grid-cols-subgrid col-span-2 items-start">
+        <Label htmlFor="email">E-mail</Label>
         <Input className="flex-grow" type="email" id="email" name="email" />
       </div>
-      <div className="flex flex-row items-start">
+      <div className="grid grid-cols-subgrid col-span-2 items-start">
         <Label htmlFor="shares">持有張數</Label>
         <Input
           className="flex-grow"
@@ -45,12 +48,12 @@ export default function ContactForm() {
           name="shares"
         />
       </div>
-      <div className="col-span-2 flex flex-row items-start">
+      <div className="grid grid-cols-subgrid col-span-2 md:col-span-4 items-start">
         <Label htmlFor="message">訊息</Label>
-        <Textarea className="flex-grow" id="message" name="message" />
+        <Textarea className="md:col-span-3" id="message" name="message" />
       </div>
-      <div>
-        <div>
+      <div className="md:col-start-2 col-span-2 md:col-span-3 flex flex-col items-center gap-2">
+        <div className="text-center">
           <input
             type="checkbox"
             id="agree"
@@ -59,7 +62,10 @@ export default function ContactForm() {
             onChange={(e) => setConfirmed(e.target.checked)}
           />
           <label htmlFor="agree">
-            我已閱讀並同意<a href="/privacy">隱私權政策</a>
+            按下送出表示已詳細閱讀，並同意提供個人資料及
+            <a className="text-brand-yellow underline" href="/privacy">
+              服務條款和隱私權政策
+            </a>
           </label>
         </div>
         <button
@@ -75,7 +81,9 @@ export default function ContactForm() {
 }
 
 function Label(props: React.LabelHTMLAttributes<HTMLLabelElement>) {
-  return <label className="text-white w-20 inline-block" {...props} />
+  return (
+    <label className="text-white inline-block whitespace-nowrap" {...props} />
+  )
 }
 
 function Input({

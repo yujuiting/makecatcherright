@@ -1,8 +1,10 @@
 {/* @ts-nocheck */}
+import Image from 'next/image'
+import FiWikiSection from '../components/FiWikiSection'
 import Letter from '../components/Letter'
 import Section from '../components/Section'
 
-<Section>
+<Section className="bg-[url(/images/bg_paper.jpg)] bg-cover bg-center">
 
 ## 至股東的信
 
@@ -12,11 +14,23 @@ import Section from '../components/Section'
 若公司無法妥善做好資金運用的規劃，就請公司還給股東決定的權力，經營者應保障與重視全體股東權益，而不是當成自家的資產。
 我們很榮幸成為台灣史上第一個，由外資提案的股東行動主義。當起市場領頭羊的腳色，喚醒可成的股東，支持股東提案，用自己的票來掌握自己的投資。讓經營者更保障與重視全體股東權益，而非成為創辦人家族的一言堂。
 
-<div className="relative text-center text-brand-green font-bold flex flex-col w-fit mx-auto before:bg-brand-yellow before:absolute before:w-[140%] before:h-1/2 before:-z-10 before:left-1/2 before:top-1/4 before:-translate-x-1/2">
-  <span>這個改變就差你一票！</span>
-  <span>你的股利你做決定！</span>
+<div className="relative flex justify-center mt-4">
+  <div className="absolute bg-brand-yellow w-1/2 h-1/2 top-1/4 -z-0" />
+  <Image
+    src="/images/bubble_letter.png"
+    className="w-1/2 z-0"
+    width={600}
+    height={150}
+  />
 </div>
 
 </Letter>
+
+<FiWikiSection>
+  **寶塔街有限公司** \
+  **瓦山塔主基金有限公司**
+
+  我們分別是成立於新加坡與香港的機構法人，兩者加起來的資產管理規模，超過30億美元，投資覆蓋多個亞洲國家逾20年。
+</FiWikiSection>
 
 </Section>
