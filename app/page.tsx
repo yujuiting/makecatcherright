@@ -72,7 +72,7 @@ export default async function Home() {
               alt="小股東募集中，馬上加入鞏固權益！"
               width={600}
               height={210}
-              className="w-2/3 sm:w-1/2 z-0"
+              className="w-1/2 z-0"
             />
             <div className="relative flex flex-col justify-end h-full py-1 gap-4">
               <Image
