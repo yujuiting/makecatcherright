@@ -54,13 +54,6 @@ export default async function Home() {
         <div className="bg-brand-yellow flex flex-row justify-center mt-18 py-4 sm:py-0">
           <div className="relative flex flex-row items-center justify-center gap-0 sm:gap-4">
             <Image
-              src="/images/img_megaphone.png"
-              width={800}
-              height={681}
-              alt="megaphone"
-              className="absolute w-[160px] -z-0 top-[-120px] right-[110px]"
-            />
-            <Image
               src="/line-icon.png"
               alt="LINE"
               width={1000}
@@ -72,9 +65,16 @@ export default async function Home() {
               alt="小股東募集中，馬上加入鞏固權益！"
               width={600}
               height={210}
-              className="w-1/2 z-0"
+              className="w-1/2 z-1"
             />
-            <div className="relative flex flex-col justify-end h-full py-1 gap-4">
+            <div className="relative flex flex-col justify-end h-full py-1 gap-4 z-0">
+              <Image
+                src="/images/img_megaphone.png"
+                width={800}
+                height={681}
+                alt="megaphone"
+                className="absolute -z-0 top-[-120px] right-[110px] w-[160px] h-[136px] max-w-none scale-75 sm:scale-100 origin-right"
+              />
               <Image
                 src="/line-qrcode.png"
                 alt="line qrcode"
