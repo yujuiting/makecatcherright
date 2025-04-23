@@ -52,7 +52,7 @@ export default async function Home() {
           </h1>
         </div>
         <div className="bg-brand-yellow flex flex-row justify-center mt-18 py-4 sm:py-0">
-          <div className="relative flex flex-row items-center gap-0 sm:gap-4 pr-14 sm:pr-4">
+          <div className="relative flex flex-row items-center justify-center gap-0 sm:gap-4">
             <Image
               src="/images/img_megaphone.png"
               width={800}
@@ -74,13 +74,13 @@ export default async function Home() {
               height={210}
               className="w-2/3 sm:w-1/2 z-0"
             />
-            <div className="absolute right-0 bottom-0 border-4 border-brand-yellow rounded flex flex-col items-center gap-4">
+            <div className="relative flex flex-col justify-end h-full py-1 gap-4">
               <Image
                 src="/line-qrcode.png"
                 alt="line qrcode"
                 width={300}
                 height={300}
-                className="w-28 h-28"
+                className="w-28 h-28 absolute bottom-[40px] border-4 border-brand-yellow rounded"
               />
               <div className="bg-white text-black border-4 border-black rounded-full px-4">
                 @2474go
