@@ -30,10 +30,14 @@ export default async function Home() {
       <header className="bg-[url(/images/bg_hero.jpg)] bg-cover bg-center">
         <div className="flex flex-row gap-4 px-4 py-2 bg-black text-white">
           <a href="tel:08000002474">
-            來電洽詢 <span className="text-brand-green">0800-000-2474</span>
+            <span className="hidden sm:inline">來電洽詢</span>
+            <span className="sm:hidden">電話</span>{' '}
+            <span className="text-brand-green">0800-000-2474</span>
           </a>
           <a>
-            搜尋官方LINE賬號<span className="text-brand-yellow">@2474go</span>
+            <span className="hidden sm:inline">搜尋官方LINE賬號</span>
+            <span className="sm:hidden">LINE</span>{' '}
+            <span className="text-brand-green">@2474go</span>
           </a>
         </div>
         <div className="flex flex-col items-center gap-4 font-extrabold text-white text-shadow-[0_0_24px_black] py-10">
@@ -47,8 +51,8 @@ export default async function Home() {
             />
           </h1>
         </div>
-        <div className="bg-brand-yellow flex flex-row justify-center mt-18">
-          <div className="relative flex flex-row items-center gap-4 pr-4">
+        <div className="bg-brand-yellow flex flex-row justify-center mt-18 py-4 sm:py-0">
+          <div className="relative flex flex-row items-center gap-0 sm:gap-4 pr-14 sm:pr-4">
             <Image
               src="/images/img_megaphone.png"
               width={800}
@@ -68,7 +72,7 @@ export default async function Home() {
               alt="小股東募集中，馬上加入鞏固權益！"
               width={600}
               height={210}
-              className="w-1/2 z-0"
+              className="w-2/3 sm:w-1/2 z-0"
             />
             <div className="absolute right-0 bottom-0 border-4 border-brand-yellow rounded flex flex-col items-center gap-4">
               <Image
@@ -106,9 +110,9 @@ export default async function Home() {
         <Section className="bg-[url(/images/bg_blue.jpg)] bg-cover bg-center">
           <SectionTitle>相關新聞連結</SectionTitle>
           <div className="grid grid-cols-1 md:grid-cols-2 text-sm gap-4">
-            {newsList.map((news) => (
+            {newsList.map((news, index) => (
               <a
-                key={[news.date, news.source, news.title].join(':')}
+                key={[index, news.date, news.source, news.title].join(':')}
                 href={`/news/${news.date}`}
               >
                 <span className="text-brand-yellow font-bold">

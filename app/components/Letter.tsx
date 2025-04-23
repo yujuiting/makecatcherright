@@ -6,7 +6,7 @@ export default function Letter({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={twMerge('p-4 shadow-xl', className)} {...props}>
+    <div className={twMerge('p-4 shadow-xl bg-white/85', className)} {...props}>
       {children}
     </div>
   )
