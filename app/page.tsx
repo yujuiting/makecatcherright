@@ -29,10 +29,10 @@ export default async function Home() {
     <div className="flex flex-col container mx-auto">
       <header className="bg-[url(/images/bg_hero.jpg)] bg-cover bg-center">
         <div className="flex flex-row gap-4 px-4 py-2 bg-black text-white">
-          <a href="tel:08000002474" target="_blank">
+          <a href="tel:0800002474" target="_blank">
             <span className="hidden sm:inline">來電洽詢</span>
             <span className="sm:hidden">電話</span>{' '}
-            <span className="text-brand-green">0800-000-2474</span>
+            <span className="text-brand-green">0800-00-2474</span>
           </a>
           <a href="https://lin.ee/4AbMrej" target="_blank">
             <span className="hidden sm:inline">搜尋官方LINE賬號</span>
