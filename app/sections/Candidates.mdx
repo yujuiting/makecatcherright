@@ -1,12 +1,13 @@
 {/* @ts-nocheck */}
 import Candidate from '@/app/components/Candidate'
 import Section from '@/app/components/Section'
+import SwipeInMobile from '@/app/components/SwipeInMobile'
 
 <Section>
 
 ## 候選人政見
 
-<div className='grid lg:grid-cols-2 gap-4'>
+<SwipeInMobile className='grid lg:grid-cols-2 gap-4 max-w-full'>
 
 <Candidate
   name="張銓城"
@@ -44,6 +45,6 @@ import Section from '@/app/components/Section'
   education="國立政治大學企業管理研究所碩士"
 />
 
-</div>
+</SwipeInMobile>
 
 </Section>

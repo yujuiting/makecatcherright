@@ -29,12 +29,12 @@ export default async function Home() {
     <div className="flex flex-col container mx-auto">
       <header className="bg-[url(/images/bg_hero.jpg)] bg-cover bg-center">
         <div className="flex flex-row gap-4 px-4 py-2 bg-black text-white">
-          <a href="tel:08000002474">
+          <a href="tel:08000002474" target="_blank">
             <span className="hidden sm:inline">來電洽詢</span>
             <span className="sm:hidden">電話</span>{' '}
             <span className="text-brand-green">0800-000-2474</span>
           </a>
-          <a>
+          <a href="https://lin.ee/4AbMrej" target="_blank">
             <span className="hidden sm:inline">搜尋官方LINE賬號</span>
             <span className="sm:hidden">LINE</span>{' '}
             <span className="text-brand-green">@2474go</span>
@@ -51,7 +51,11 @@ export default async function Home() {
             />
           </h1>
         </div>
-        <div className="bg-brand-yellow flex flex-row justify-center mt-18 py-4 sm:py-0">
+        <a
+          className="bg-brand-yellow flex flex-row justify-center mt-18 py-4 sm:py-0"
+          href="https://lin.ee/4AbMrej"
+          target="_blank"
+        >
           <div className="relative flex flex-row items-center justify-center gap-0 sm:gap-4">
             <Image
               src="/line-icon.png"
@@ -87,7 +91,7 @@ export default async function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </a>
       </header>
       <main className="flex flex-col row-start-2 items-center sm:items-start">
         <Candidates />
