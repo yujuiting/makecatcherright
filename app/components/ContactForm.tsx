@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 import send from './send.action'
 
@@ -22,6 +22,13 @@ export default function ContactForm() {
     })
     setIsSubmitted(true)
   }
+
+  useEffect(() => {
+    if (isSubmitted) {
+      alert('已送出')
+      window.location.reload()
+    }
+  }, [isSubmitted])
 
   return (
     <form
