@@ -15,9 +15,9 @@ export default function Popup({ url, isOpen, onClose }: PopupProps) {
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-0 -right-8 cursor-pointer"
+          className="absolute top-2 right-2 cursor-pointer"
         >
-          <CloseIcon className="text-white" />
+          <CloseIcon className="text-black" />
         </button>
         <iframe src={url} className="w-full h-full" />
       </div>
