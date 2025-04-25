@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 import send from './send.action'
+import TermsAndPrivacyTrigger from './TermsAndPrivacyTrigger'
 
 export default function ContactForm() {
   const [confirmed, setConfirmed] = useState(false)
@@ -97,9 +98,7 @@ export default function ContactForm() {
           />
           <label htmlFor="agree">
             按下送出表示已詳細閱讀，並同意提供個人資料及
-            <a className="text-brand-yellow underline" href="/privacy">
-              服務條款和隱私權政策
-            </a>
+            <TermsAndPrivacyTrigger />
           </label>
         </div>
         <button

@@ -1,30 +1,11 @@
-import { readdir } from 'fs/promises'
 import Image from 'next/image'
-import path from 'path'
 import ContactForm from './components/ContactForm'
 import Section, { SectionTitle } from './components/Section'
 import Candidates from './sections/Candidates.mdx'
+import NewsList from './sections/NewsList.mdx'
 import ShareholderLetter from './sections/ShareholderLetter.mdx'
 
-interface NewsMetadata {
-  title: string
-  source: string
-  date: string
-}
-
-async function getNewsMetadata(news: string): Promise<NewsMetadata> {
-  const { metadata } = await import(`./news/${news}/page.mdx`)
-  return metadata
-}
-
-async function getNewsList() {
-  const news = await readdir(path.resolve(process.cwd(), 'app/news'))
-  return Promise.all(news.map(getNewsMetadata))
-}
-
 export default async function Home() {
-  const newsList = await getNewsList()
-
   return (
     <div className="flex flex-col container mx-auto">
       <header className="bg-[url(/images/bg_hero.jpg)] bg-cover bg-center">
@@ -111,24 +92,7 @@ export default async function Home() {
           </div>
         </Section>
         <ShareholderLetter />
-        <Section className="bg-[url(/images/bg_blue.jpg)] bg-cover bg-center">
-          <SectionTitle>相關新聞連結</SectionTitle>
-          <div className="grid grid-cols-1 md:grid-cols-2 text-sm gap-4">
-            {newsList.map((news, index) => (
-              <a
-                key={[index, news.date, news.source, news.title].join(':')}
-                href={`/news/${news.date}`}
-              >
-                <span className="text-brand-yellow font-bold">
-                  {news.source}
-                </span>
-                <span className="text-white">|{news.date}</span>
-                <br />
-                <span className="text-brand-yellow">{news.title}</span>
-              </a>
-            ))}
-          </div>
-        </Section>
+        <NewsList />
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
     </div>
