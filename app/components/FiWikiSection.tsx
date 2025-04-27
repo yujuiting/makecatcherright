@@ -10,7 +10,7 @@ export default function FiWikiSection({
         <Image
           src="/images/subtitle_fini.png"
           alt="外資小檔案"
-          className="w-[80px]"
+          className="w-[120px]"
           width={248}
           height={62}
         />
