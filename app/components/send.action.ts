@@ -20,14 +20,6 @@ export default async function send({
   shares,
   message,
 }: SendPayload) {
-  console.log({
-    GOOGLE_PROJECT_ID: process.env.GOOGLE_PROJECT_ID,
-    GOOGLE_PRIVATE_KEY_ID: process.env.GOOGLE_PRIVATE_KEY_ID,
-    GOOGLE_PRIVATE_KEY: process.env.GOOGLE_PRIVATE_KEY,
-    GOOGLE_CLIENT_EMAIL: process.env.GOOGLE_CLIENT_EMAIL,
-    GOOGLE_SPREADSHEET_ID: process.env.GOOGLE_SPREADSHEET_ID,
-  })
-
   const auth = await google.auth.getClient({
     projectId: '',
     credentials: {
@@ -48,7 +40,16 @@ export default async function send({
     range: 'Contact',
     valueInputOption: 'USER_ENTERED',
     requestBody: {
-      values: [[name, phone, email, shares, message]],
+      values: [
+        [
+          name,
+          phone,
+          email,
+          shares,
+          message,
+          new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' }),
+        ],
+      ],
     },
   })
 
