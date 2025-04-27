@@ -27,9 +27,20 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </p>
     ),
     table: ({ children, className, ...props }) => (
-      <table className={twMerge('[&_thead]:font-bold [&_tr]:odd:bg-neutral-100 [&_tr]:even:bg-neutral-200', className)} {...props}>
+      <table
+        className={twMerge(
+          '[&_thead]:font-bold [&_tr]:odd:bg-neutral-100 [&_tr]:even:bg-neutral-200',
+          className
+        )}
+        {...props}
+      >
         {children}
       </table>
+    ),
+    tr: ({ children, className, ...props }) => (
+      <tr className={twMerge('[&_td]:p-2 [&_th]:p-2', className)} {...props}>
+        {children}
+      </tr>
     ),
   }
 }
