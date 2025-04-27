@@ -17,7 +17,7 @@ export default async function Home() {
             <span className="text-brand-green">0800-00-2474</span>
           </a>
           <a href="https://lin.ee/4AbMrej" target="_blank">
-            <span className="hidden sm:inline">搜尋官方LINE賬號</span>
+            <span className="hidden sm:inline">搜尋官方LINE帳號</span>
             <span className="sm:hidden">LINE</span>{' '}
             <span className="text-brand-green">@2474go</span>
           </a>
