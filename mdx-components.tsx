@@ -16,6 +16,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </ol>
     ),
+    ul: ({ children, className, ...props }) => (
+      <ul className={twMerge('pl-8 list-[auto]', className)} {...props}>
+        {children}
+      </ul>
+    ),
     p: ({ children, className, ...props }) => (
       <p className={twMerge('my-4', className)} {...props}>
         {children}

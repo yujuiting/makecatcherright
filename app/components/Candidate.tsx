@@ -1,19 +1,21 @@
+import { } from '@mdx-js/react'
+
 export interface CandidateProps {
   name: string
   title: string
   image: string
-  description: string
   currentPosition: string
   education: string
+  children: React.ReactNode
 }
 
 export default function Candidate({
   name,
   title,
   image,
-  description,
   currentPosition,
   education,
+  children,
 }: CandidateProps) {
   return (
     <div className="grid gap-2 grid-rows-[auto_auto_1fr] grid-cols-[auto_1fr] md:grid-rows-[1fr_auto] md:grid-cols-[auto_1fr] *:grid *:items-center">
@@ -30,8 +32,8 @@ export default function Candidate({
         <br />
         學歷：{education}
       </div>
-      <div className="col-span-2 bg-neutral-200 p-2 md:row-start-1 md:col-start-2">
-        {description}
+      <div className="col-span-2 bg-neutral-200 p-2 md:row-start-1 md:col-start-2 flex !items-start">
+        {children}
       </div>
     </div>
   )
