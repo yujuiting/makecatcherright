@@ -22,10 +22,10 @@ export default function Candidate({
         style={{ backgroundImage: `url(${image})` }}
       />
       <div className="md:col-start-1">
-        <span className="text-2xl md:text-base font-bold">{name}</span>
-        <span>{title}</span>
+        <span className="text-2xl font-bold">{name}</span>
+        <span className="w-[140px]">{title}</span>
       </div>
-      <div className="text-sm text-neutral-500 md:col-start-2">
+      <div className="text-neutral-500 md:col-start-2">
         現任：{currentPosition}
         <br />
         學歷：{education}

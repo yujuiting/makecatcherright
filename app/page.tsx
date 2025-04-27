@@ -65,7 +65,7 @@ export default async function Home() {
                 alt="line qrcode"
                 width={300}
                 height={300}
-                className="w-28 h-28 absolute bottom-[40px] border-4 border-brand-yellow rounded"
+                className="w-28 h-28 absolute bottom-[44px] left-1/2 -translate-x-1/2 border-4 border-brand-yellow rounded"
               />
               <div className="bg-white text-black border-4 border-black rounded-full px-4">
                 @2474go
@@ -75,6 +75,20 @@ export default async function Home() {
         </a>
       </header>
       <main className="flex flex-col row-start-2 items-center sm:items-start">
+        <Section className="bg-[url(/images/bg_blue.jpg)] bg-cover bg-center flex items-center">
+          <a
+            href="https://acsc.com.tw/acscdl/i.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/images/img_location.png"
+              alt="location"
+              width={715}
+              height={268}
+            />
+          </a>
+        </Section>
         <Candidates />
         <Section className="bg-[url(/images/bg_blue.jpg)] bg-cover bg-center">
           <SectionTitle>聯絡我們</SectionTitle>

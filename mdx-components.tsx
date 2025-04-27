@@ -5,11 +5,6 @@ import { twMerge } from 'tailwind-merge'
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
-    wrapper: ({ children, className, ...props }) => (
-      <div className={twMerge('container mx-auto p-4', className)} {...props}>
-        {children}
-      </div>
-    ),
     h1: ({ children, className, ...props }) => (
       <h1 className={twMerge('text-4xl font-bold', className)} {...props}>
         {children}
