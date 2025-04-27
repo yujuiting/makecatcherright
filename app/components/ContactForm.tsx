@@ -72,7 +72,7 @@ export default function ContactForm() {
           className="flex-grow"
           type="number"
           min={0}
-          step={1}
+          step={0.1}
           id="shares"
           name="shares"
           disabled={isSubmitted}
