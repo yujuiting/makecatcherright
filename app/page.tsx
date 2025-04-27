@@ -77,7 +77,7 @@ export default async function Home() {
       </header>
       <main className="flex flex-col row-start-2 items-center sm:items-start">
         <Section className="bg-[url(/images/bg_blue.jpg)] bg-cover bg-center flex items-center">
-          <Link href="/locations">
+          <Link href="/locations" target="_blank">
             <Image
               src="/images/img_location.png"
               alt="location"
