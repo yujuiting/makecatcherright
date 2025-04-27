@@ -10,18 +10,25 @@ export default function ContactForm() {
 
   const [isSubmitted, setIsSubmitted] = useState(false)
 
+  const [isLoading, setIsLoading] = useState(false)
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const formData = new FormData(e.target as HTMLFormElement)
     const data = Object.fromEntries(formData)
-    await send({
-      name: data.name as string,
-      phone: data.phone as string,
-      email: data.email as string,
-      shares: data.shares as string,
-      message: data.message as string,
-    })
-    setIsSubmitted(true)
+    setIsLoading(true)
+    try {
+      await send({
+        name: data.name as string,
+        phone: data.phone as string,
+        email: data.email as string,
+        shares: data.shares as string,
+        message: data.message as string,
+      })
+      setIsSubmitted(true)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   useEffect(() => {
@@ -104,9 +111,9 @@ export default function ContactForm() {
         <button
           type="submit"
           className="bg-indigo-900 text-white min-w-40 disabled:opacity-50"
-          disabled={!confirmed || isSubmitted}
+          disabled={!confirmed || isSubmitted || isLoading}
         >
-          {isSubmitted ? '已送出' : '送出'}
+          {isLoading ? '送出中...' : isSubmitted ? '已送出' : '送出'}
         </button>
       </div>
     </form>
