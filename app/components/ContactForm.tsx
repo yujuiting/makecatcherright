@@ -67,7 +67,7 @@ export default function ContactForm() {
         />
       </div>
       <div className="grid grid-cols-subgrid col-span-2 items-start">
-        <Label htmlFor="shares">持有張數</Label>
+        <Label htmlFor="shares">持有股數</Label>
         <Input
           className="flex-grow"
           type="number"
