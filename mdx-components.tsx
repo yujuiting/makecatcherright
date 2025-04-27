@@ -17,7 +17,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </ol>
     ),
     ul: ({ children, className, ...props }) => (
-      <ul className={twMerge('pl-8 list-[auto]', className)} {...props}>
+      <ul className={twMerge('pl-8 list-disc', className)} {...props}>
         {children}
       </ul>
     ),
@@ -25,6 +25,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <p className={twMerge('my-4', className)} {...props}>
         {children}
       </p>
+    ),
+    table: ({ children, className, ...props }) => (
+      <table className={twMerge('[&_thead]:font-bold [&_tr]:odd:bg-neutral-100 [&_tr]:even:bg-neutral-200', className)} {...props}>
+        {children}
+      </table>
     ),
   }
 }

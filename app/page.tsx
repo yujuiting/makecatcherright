@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import ContactForm from './components/ContactForm'
 import Section, { SectionTitle } from './components/Section'
 import Candidates from './sections/Candidates.mdx'
@@ -76,18 +77,14 @@ export default async function Home() {
       </header>
       <main className="flex flex-col row-start-2 items-center sm:items-start">
         <Section className="bg-[url(/images/bg_blue.jpg)] bg-cover bg-center flex items-center">
-          <a
-            href="https://acsc.com.tw/acscdl/i.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link href="/locations">
             <Image
               src="/images/img_location.png"
               alt="location"
               width={715}
               height={268}
             />
-          </a>
+          </Link>
         </Section>
         <Candidates />
         <Section className="bg-[url(/images/bg_blue.jpg)] bg-cover bg-center">
