@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 import { Noto_Sans } from 'next/font/google'
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Analytics />
+      <GoogleAnalytics gaId='G-70W6T8Z1MP' />
       <body className={`${notoSans.variable} antialiased`}>{children}</body>
     </html>
   )

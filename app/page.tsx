@@ -3,6 +3,7 @@ import Link from 'next/link'
 import ContactForm from './components/ContactForm'
 import Section, { SectionTitle } from './components/Section'
 import Candidates from './sections/Candidates.mdx'
+import Disclaimer from './sections/Disclaimer.mdx'
 import NewsList from './sections/NewsList.mdx'
 import ShareholderLetter from './sections/ShareholderLetter.mdx'
 
@@ -103,6 +104,7 @@ export default async function Home() {
           </div>
         </Section>
         <ShareholderLetter />
+        <Disclaimer />
         <NewsList />
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
