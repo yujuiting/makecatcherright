@@ -28,7 +28,7 @@ export default function Candidate({
         <span className="w-[140px]">{title}</span>
       </div>
       <div className="text-neutral-500 md:col-start-2">
-        現任：{currentPosition}
+        {currentPosition}
         <br />
         學歷：{education}
       </div>

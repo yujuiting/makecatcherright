@@ -2,8 +2,9 @@
 
 import React, { useEffect, useState } from 'react'
 import 'swiper/css'
+import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-import { Pagination } from 'swiper/modules'
+import { Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 export default function SwipeInMobile({
@@ -26,7 +27,8 @@ export default function SwipeInMobile({
       wrapperClass="mb-10"
       spaceBetween={30}
       pagination={{ clickable: true }}
-      modules={[Pagination]}
+      navigation={true}
+      modules={[Pagination, Navigation]}
       {...props}
     >
       {React.Children.toArray(children)?.map((child, index) => (
