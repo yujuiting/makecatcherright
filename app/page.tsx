@@ -102,13 +102,6 @@ export default async function Home() {
             </div>
           </div>
         </Section>
-        <Section className="bg-[url(/images/bg_blue.jpg)] bg-cover bg-center">
-         <SectionTitle>免責聲明</SectionTitle>
-          <div className="flex flex-row gap-20 justify-center">
-            <ContactForm />
-            <div className="relative aspect-square h-[200px] bg-[#1C75AA] rounded-full hidden md:block">
-            </div>
-          </div>
         <ShareholderLetter />
         <NewsList />
       </main>
