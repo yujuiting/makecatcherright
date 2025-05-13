@@ -13,19 +13,19 @@ export default async function Home() {
       <header className="bg-[url(/images/bg_hero.jpg)] bg-cover bg-center">
         <div className="flex flex-row gap-4 px-4 py-2 bg-black text-white">
           <a href="tel:0800002474" target="_blank">
-            <span className="hidden sm:inline">來電洽詢</span>
-            <span className="sm:hidden">電話</span>{' '}
-            <span className="text-brand-green">0800-00-2474</span>
+            <span className="text-sm hidden sm:inline">來電洽詢</span>
+            <span className="text-sm sm:hidden">電話</span>{' '}
+            <span className="text-sm text-brand-green">0800-00-2474</span>
           </a>
           <a href="https://lin.ee/4AbMrej" target="_blank">
-            <span className="hidden sm:inline">搜尋官方LINE帳號</span>
-            <span className="sm:hidden">LINE</span>{' '}
-            <span className="text-brand-green">@2474go</span>
+            <span className="text-sm hidden sm:inline">搜尋官方LINE帳號</span>
+            <span className="text-sm sm:hidden">LINE</span>{' '}
+            <span className="text-sm text-brand-green">@2474go</span>
           </a>
           <div className="grow" />
           <a href="https://www.governanceforcatcher.com/" target="_blank">
             <span className='hidden sm:inline-block'>ENGLISH</span>
-            <span className='sm:hidden'>EN</span>
+            <span className='sm:hidden text-xs'>EN</span>
           </a>
         </div>
         <div className="flex flex-col items-center gap-4 font-extrabold text-white text-shadow-[0_0_24px_black] py-10">
