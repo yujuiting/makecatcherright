@@ -22,6 +22,11 @@ export default async function Home() {
             <span className="sm:hidden">LINE</span>{' '}
             <span className="text-brand-green">@2474go</span>
           </a>
+          <div className="grow" />
+          <a href="https://www.governanceforcatcher.com/" target="_blank">
+            <span className='hidden sm:inline-block'>ENGLISH</span>
+            <span className='sm:hidden'>EN</span>
+          </a>
         </div>
         <div className="flex flex-col items-center gap-4 font-extrabold text-white text-shadow-[0_0_24px_black] py-10">
           <h1 className="flex flex-col items-center">
